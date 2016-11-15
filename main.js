@@ -13,8 +13,6 @@ problem.
 // 1. Connect the main.js document to the HTML page.
 //    Then Update the Text to Green by adding the .status-good class.
 
-
-
 // When the JS is connected properly, the following code will update the status message. 
 document.getElementById("q1").innerHTML = "JS Page Connected Properly!";
 document.getElementById("q1").classList.add("status-good");
@@ -26,9 +24,8 @@ document.getElementById("q1").classList.add("status-good");
 //    how well you feel about this course material. 
 //    Then display that string within the HTML page. 
 
-
-
-
+var feelings = "I feel great about this course!";
+document.getElementById("q2").innerHTML = feelings;
 
 
 
@@ -38,9 +35,11 @@ document.getElementById("q1").classList.add("status-good");
 //    concat the message and name variables
 //    and then display it within the HTML page.
 
+var name = "Elizabeth Carranza";
+var message = "welcome to the course!";
+var greeting = name + ", " + message;
 
-
-
+document.getElementById('q3').innerHTML = greeting;
 
 
 
@@ -49,10 +48,17 @@ document.getElementById("q1").classList.add("status-good");
 //    Display the values of each within the HTML page.
 //    Then label these values the best you can. 
 
+var first = 10;
+var second = 50;
+var add = first + second;
+var subtract = first - second;
+var multiply = first * second;
+var divide = first / second;
 
-
-
-
+document.getElementById("q4a").innerHTML = add;
+document.getElementById("q4b").innerHTML = subtract;
+document.getElementById("q4c").innerHTML = multiply;
+document.getElementById("q4d").innerHTML = divide;
 
 
 // 5. Declare two variables with string values.
@@ -60,27 +66,38 @@ document.getElementById("q1").classList.add("status-good");
 //    that also places the appropriate space between the strings.
 //    Display the value of the third variable within the HTML page.
 
-
-
-
+var greet = "Hello there";
+var string= "glad to see you again!";
+var concat = greet + "," + " and " + string;
+document.getElementById("q5").innerHTML = concat;
 
 
 
 // 6. Add, subract, multiply and divide the strings '5' and '3'.
 //    Observe the results and brieftly explain the results within the HTML page.
+var five = "5";
+var three= "3";
+var addition = five + three;
+var subtraction = five - three;
+var multiplication = five * three;
+var division = five / three;
+var note = "Not really sure what happened there."
 
-
-
-
-
-
+document.getElementById("q6a").innerHTML= addition;
+document.getElementById("q6b").innerHTML= subtraction;
+document.getElementById("q6c").innerHTML= multiplication;
+document.getElementById("q6d").innerHTML= division;
+document.getElementById("q6note").innerHTML= note;
 
 
 // 7. When a button is clicked, add content into the ID "q7". 
 
+var content = "The button has been clicked!";
 
+document.getElementById("callAlert").addEventListener("click", function(){
+	document.getElementById("q7").innerHTML = content;
 
-
+});
 
 
 
@@ -88,8 +105,13 @@ document.getElementById("q1").classList.add("status-good");
 //    then double user's answer and display that value into the HTML page.
 
 
+document.getElementById("callDoubleNum").addEventListener("click", function(){
 
+	var doubleNum = document.getElementById("doubleNum").value;
+	var double = doubleNum *2;
+	document.getElementById("q8").innerHTML = double;
 
+});
 
 
 
@@ -99,9 +121,14 @@ document.getElementById("q1").classList.add("status-good");
 //    If so, output to the HTML page: Yes, the value of num1 is greater than num2
 //    If not, output to the HTML page: No, the value of num1 is not greater than num2
 
+var num1 = 5;
+var num2 = 10;
 
-
-
+if (num1 > num2) {
+	document.getElementById("q9").innerHTML = "Yes, the value of num1 is greater than num2";	
+} else {
+	document.getElementById("q9").innerHTML = "No, the value of num1 is not greater than num2";
+};
 
 
 
@@ -112,7 +139,17 @@ document.getElementById("q1").classList.add("status-good");
 //    If the score is below 59, output to the HTML page "Very bad: study more and retake the test".
 //    Test to make sure each condition is met properly. 
 
+var score = 76;
 
+if (score > 90) {
+	document.getElementById("q10").innerHTML = "Great job";	
+} 
+else if (score >= 60 && score <= 89){
+	document.getElementById("q10").innerHTML = "Nice work, keep practicing";
+}
+else if (score < 59){
+	document.getElementById("q10").innerHTML = "Very bad: study more and retake the test";
+};
 
 
 
@@ -126,15 +163,9 @@ document.getElementById("q1").classList.add("status-good");
 
 
 
-
-
-
 // B. Create the formula to determine the area of a rectangle.
 //     The rectangle is: 2 inches by 3 inches
 //     Display the result in the HTML page. 
-
-
-
 
 
 
@@ -143,13 +174,7 @@ document.getElementById("q1").classList.add("status-good");
 
 
 
-
-
-
 // D. Have the user enter their name into a textfield. When they click a button, find the length (number of characters) of their name and display the result in the HTML page. 
-
-
-
 
 
 
