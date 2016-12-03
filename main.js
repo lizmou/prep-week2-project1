@@ -1,6 +1,6 @@
 /*
 =======================================================
-** Week 1 - Project 2 **
+** Week 1 - Project 2 ** Variables, Operators, & Conditions
 
 Below are a number of problems for you to solve
 using JS. The JS code can be written below each
@@ -16,7 +16,6 @@ problem.
 // When the JS is connected properly, the following code will update the status message. 
 document.getElementById("q1").innerHTML = "JS Page Connected Properly!";
 document.getElementById("q1").classList.add("status-good");
-
 
 
 // 2. Declare a new variable called 'feelings', 
@@ -81,7 +80,7 @@ var addition = five + three;
 var subtraction = five - three;
 var multiplication = five * three;
 var division = five / three;
-var note = "Not really sure what happened there."
+var note = "JS reads the strings " +five + " and " + three + " as numbers because you can only concatenate strings."
 
 document.getElementById("q6a").innerHTML= addition;
 document.getElementById("q6b").innerHTML= subtraction;
@@ -100,11 +99,10 @@ document.getElementById("callAlert").addEventListener("click", function(){
 });
 
 
-
 // 8. Collect a number value from the user and when a button is clicked, 
 //    then double user's answer and display that value into the HTML page.
 
-
+//Target the id #callDoubleNum
 document.getElementById("callDoubleNum").addEventListener("click", function(){
 
 	var doubleNum = document.getElementById("doubleNum").value;
@@ -125,9 +123,9 @@ var num1 = 5;
 var num2 = 10;
 
 if (num1 > num2) {
-	document.getElementById("q9").innerHTML = "Yes, the value of num1 is greater than num2";	
+	document.getElementById("q9").innerHTML = "Yes, the value of " + num1 + " is greater than " + num2;	
 } else {
-	document.getElementById("q9").innerHTML = "No, the value of num1 is not greater than num2";
+	document.getElementById("q9").innerHTML = "No, the value of " + num1 + " is not greater than " + num2;
 };
 
 
@@ -142,16 +140,14 @@ if (num1 > num2) {
 var score = 76;
 
 if (score > 90) {
-	document.getElementById("q10").innerHTML = "Great job";	
+	document.getElementById("q10").innerHTML = score + "Great job";	
 } 
 else if (score >= 60 && score <= 89){
 	document.getElementById("q10").innerHTML = "Nice work, keep practicing";
 }
-else if (score < 59){
+else {
 	document.getElementById("q10").innerHTML = "Very bad: study more and retake the test";
 };
-
-
 
 
 
@@ -162,21 +158,41 @@ else if (score < 59){
 //   "My name is __. I'm __ years old, and I live in __."
 
 
+document.getElementById("form-button").addEventListener("click",function(){
+var userName = document.getElementById("name").value;
+var userAge = document.getElementById("age").value;
+var userCity = document.getElementById("city").value;
+var result = "My name is " + userName + ". I'm " + userAge + " years old, and I live in " + userCity + ".";
+
+document.getElementById("qa").innerHTML = result;
+});
 
 // B. Create the formula to determine the area of a rectangle.
 //     The rectangle is: 2 inches by 3 inches
 //     Display the result in the HTML page. 
+var length = 2;
+var width = 3;
+var area = Number(length) * Number(width);
+
+document.getElementById("qb").innerHTML = area;
 
 
-
-// C. Collect the use's length and width input to determine the area of a rectangle and display within the HTML page the result.
-
-
+// C. Collect the user's length and width input to determine the area of a rectangle and display within the HTML page the result.
+document.getElementById("button").addEventListener("click", function(){
+	var length = document.getElementById("len").value;
+	var width = document.getElementById("wid").value;
+	var area = Number(length) * Number(width);
+	document.getElementById("qc").innerHTML = area;
+});
 
 
 // D. Have the user enter their name into a textfield. When they click a button, find the length (number of characters) of their name and display the result in the HTML page. 
 
-
+document.getElementById("find-length").addEventListener("click", function(){
+    var username = document.getElementById("find-name").value;
+    var usernameLength = username.length;
+    document.getElementById("qd").innerHTML = usernameLength;
+});
 
 
 // E. Create a textfield to request a test score between 0-100 from the user. 
@@ -185,7 +201,17 @@ else if (score < 59){
 //    If the score is below 59, display a message of "Very bad: study more and retake the test.".
 //    You can get fancy by adding CSS styles to each of these displays to change the color, too - Green=Good, Orange=OK, Red=Bad
 
+document.getElementById("find-score").addEventListener("click", function(){
+	var score = document.getElementById("score").value;
+	if (score>90){
+		document.getElementById("qe").innerHTML = "You scored a " + score + "! Great Job!";
+	} else if(score>=60 && score<=89){
+		document.getElementById("qe").innerHTML = "You scored a " + score + "! Nice work, keep practicing.";
+	}else{
+		document.getElementById('qe').innerHTML = "You scored a " + score + ". Very bad; study more and retake the test.";
+	}
 
+});
 
 
 
